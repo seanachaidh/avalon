@@ -17,6 +17,10 @@
         "laravel-mix": "^2.0",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
-        "vue": "^2.5.7"
+        "vue": "^2.5.7",
+        "ts-loader": "^2.0.3",
+        "typescript": "^2.3.2",
+        "@angular/core": "7.0.0",
+        "@angular/common": "7.0.0"
     }
 }

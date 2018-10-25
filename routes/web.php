@@ -18,3 +18,11 @@ Route::get('/', function () {
 
     return view('overview', ['articles' => $articles]);
 });
+
+Route::get('/login', function(){
+    return view('login');
+});
+
+Route::get('/addblog', function() {
+    return view('addblog');
+});

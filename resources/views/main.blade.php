@@ -31,10 +31,13 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Blogposts</a>
+                    <a class="nav-link" href="overview">Blogposts</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Login</a>
                 </li>
             </ul>
         </div>

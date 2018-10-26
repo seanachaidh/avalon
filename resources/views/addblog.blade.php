@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form method="POST" action="/addblog">
+<form method="POST" action="/articles/create">
     <div class="form-group">
         <label for="title">Titel</label>
         <input type="text" id="title" class="form-control" />

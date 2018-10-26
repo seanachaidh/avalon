@@ -19,9 +19,9 @@ Route::get('/', function () {
     return view('overview', ['articles' => $articles]);
 });
 
-Route::get('/login', function(){
-    return view('login');
-});
+Route::get('/login', 'MyLoginController@showLogin');
+Route::post('/login','MyLoginController@authenticate');
+Route::get('/logout', 'MyLoginController@logout');
 
 Route::resource('articles', 'ArticleController')->only([
     'create', 'store', 'update', 'delete'

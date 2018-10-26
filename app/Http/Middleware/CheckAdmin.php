@@ -18,7 +18,7 @@ class CheckAdmin
         $user = $request->user();
         $method = $request->method();
 
-        if($user->admin) {
+        if(!is_null($user) && $user->admin) {
             return $next($request);
         } else {
             abort(403);

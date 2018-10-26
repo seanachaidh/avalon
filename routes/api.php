@@ -14,10 +14,4 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/user/login', 'MyLoginController@authenticate');
-Route::get(
-    '/user/logout', function (Request $request) {
-        Auth::logout();
-    }
-);
 

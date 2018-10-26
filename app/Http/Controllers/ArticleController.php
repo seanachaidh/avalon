@@ -14,7 +14,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $article = Article::all();
+        return view('overview', ['articles' => $article]);
     }
 
     /**
@@ -24,7 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('addblog');
     }
 
     /**
@@ -35,7 +36,13 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $title = $request->input('title');
+        $contents = $request->input('contents');
+
+        Article::create([
+            'title' => $title,
+            'contents' => $contents
+        ]);
     }
 
     /**
@@ -44,9 +51,13 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show(Article $article, Request $request)
     {
-        //
+        if($request->wantsJson()) {
+            return response()->json($article);
+        } else {
+            abort(403, 'Not implemented');
+        }
     }
 
     /**
@@ -69,7 +80,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $article->save();
     }
 
     /**
@@ -80,6 +91,6 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
     }
 }

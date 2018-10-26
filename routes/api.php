@@ -20,3 +20,4 @@ Route::get(
         Auth::logout();
     }
 );
+

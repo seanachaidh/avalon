@@ -14,8 +14,14 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $article = Article::all();
-        return view('overview', ['articles' => $article]);
+        $article = Article::all()->orderBy('created_at')->get();
+
+        if ($request->wantsJson()){
+            return response()->json($article);
+        } else {
+            return view('overview', ['articles' => $article]);
+        }
+        
     }
 
     /**
@@ -23,7 +29,7 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('addblog');
     }

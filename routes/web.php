@@ -23,6 +23,10 @@ Route::get('/login', function(){
     return view('login');
 });
 
-Route::get('/addblog', function() {
-    return view('addblog');
-});
+Route::resource('articles', 'ArticleController')->only([
+    'create', 'store', 'update', 'delete'
+])->middleware('CheckAdmin');
+
+Route::resource('articles', 'ArticleController')->only([
+    'index', 'show'
+]);

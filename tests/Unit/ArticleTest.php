@@ -36,13 +36,26 @@ class ArticleTest extends TestCase
 
     public function testPost() {
         $response = $this->actingAs($this->user)
-                         ->post('/articles', ['title' => 'testingart',
+                         ->json('POST', '/articles', ['title' => 'testing_article',
                                                     'contents' => 'helloworld']);
         $response->assertSuccessful();
 
         $simresponse = $this->actingAs($this->simple)
-                         ->post('/articles', ['title' => 'testingsimple',
+                         ->json('POST', '/articles', ['title' => 'testing_article',
                                               'contents' => 'hello world']);
         $simresponse->assertForbidden();
+
+        //Delete both resources
+        $savedobj = Article::where('title', 'testing_article')->get();
+
+        foreach ($savedobj as $obj) {
+            $response = $this->actingAs($this->user)
+                ->delete('/articles/' . $obj->id);
+            $response->assertSuccessful();
+            $this->assertDatabaseMissing('articles', $obj);
+        }
+
+
+
     }
 }

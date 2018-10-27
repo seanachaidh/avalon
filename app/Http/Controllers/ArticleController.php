@@ -12,9 +12,9 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $article = Article::all()->orderBy('created_at')->get();
+        $article = Article::orderBy('created_at')->get();
 
         if ($request->wantsJson()){
             return response()->json($article);
@@ -45,10 +45,18 @@ class ArticleController extends Controller
         $title = $request->input('title');
         $contents = $request->input('contents');
 
-        Article::create([
+        $newart = Article::create([
             'title' => $title,
             'contents' => $contents
         ]);
+        if ($request->wantsJson()) {
+            return response()->json([
+                'created' => 'true',
+                'object' => $newart
+            ]);
+        } else {
+            return redirect()->intended('/articles');
+        }
     }
 
     /**

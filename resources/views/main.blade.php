@@ -31,7 +31,7 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="articles">Blogposts</a>
+                    <a class="nav-link" href="/articles">Blogposts</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About me</a>

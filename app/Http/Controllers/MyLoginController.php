@@ -17,7 +17,7 @@ class MyLoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             Log::info('Logging in succeeded');
-            return redirect()->intended('articles/create');
+            return redirect()->intended('/articles/create');
         } else {
             Log::info('login failed');
             abort(403);

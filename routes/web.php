@@ -30,3 +30,8 @@ Route::resource('articles', 'ArticleController')->only([
 Route::resource('articles', 'ArticleController')->only([
     'index', 'show'
 ]);
+
+Route::resource('articles.comments', 'CommentController')->only([
+    'store'
+]);
+

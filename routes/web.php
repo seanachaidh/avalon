@@ -14,9 +14,12 @@ use App\Article;
 */
 
 Route::get('/', function () {
-    $articles = App\Article::all();
+    return redirect()->intended('/articles');
+});
 
-    return view('overview', ['articles' => $articles]);
+Route::get('/feed.rss', function() {
+    $articles = Article::all();
+    return view('rssfeed', ['articles' => $articles]);
 });
 
 Route::get('/login', 'MyLoginController@showLogin');

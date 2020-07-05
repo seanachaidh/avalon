@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/app.css" type="text/css" />
 
 </head>
-<body>
+<body style="background-image: url('img/digitalcity_0017.JPG');">
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Avalon</a>

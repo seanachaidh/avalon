@@ -14,3 +14,4 @@ yarn-error.log
 .phpunit.result.cache
 avalondb.db
 .DS_Store
+public/*

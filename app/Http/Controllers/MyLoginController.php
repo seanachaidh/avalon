@@ -24,8 +24,9 @@ class MyLoginController extends Controller
         }
     }
 
-    public function logout() {
+    public function logout(Request $request) {
         Auth::logout();
+        return redirect()->intended('/');
     }
 
     public function showLogin() {

@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
+
+    private function resolve(Article $article){
+        return Storage::disk('public')->get($article->contents);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +21,12 @@ class ArticleController extends Controller
     public function index(Request $request)
     {
         $article = Article::orderBy('created_at')->get();
+
+        //Van de variabele een referentie maken zodat ik het direct kan bewerken
+        foreach ($article as &$a) {
+            $new_contents = $this->resolve($a);
+            $a->html_contents = $new_contents;
+        }
 
         if ($request->wantsJson()){
             return response()->json($article);
@@ -44,11 +56,21 @@ class ArticleController extends Controller
     {
         $title = $request->input('title');
         $contents = $request->input('contents');
+        $synopsis = $request->input('synopsis');
+
+        $new_filename = "articles/article_" . $title . ".html";
 
         $newart = Article::create([
             'title' => $title,
-            'contents' => $contents
+            'contents' => $new_filename,
+            'synopsis' => $synopsis
         ]);
+        
+        /*
+         * Save the requested filename
+         */
+        Storage::disk('public')->put($new_filename, $contents);
+
         if ($request->wantsJson()) {
             return response()->json([
                 'created' => 'true',
@@ -59,7 +81,7 @@ class ArticleController extends Controller
         }
     }
 
-    /**
+    /*
      * Display the specified resource.
      *
      * @param  \App\Article  $article
@@ -70,7 +92,7 @@ class ArticleController extends Controller
         if($request->wantsJson()) {
             return response()->json($article);
         } else {
-            abort(403, 'Not implemented');
+            return redirect()->intended('/articles');
         }
     }
 

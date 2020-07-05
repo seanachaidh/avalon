@@ -7,5 +7,3 @@
 
 require('./bootstrap');
 
-const helloWorld = require('./testing').helloWorld();
-console.log(helloWorld);

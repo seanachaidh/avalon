@@ -46,6 +46,7 @@ class CommentController extends Controller
             'contents' => $contents
         ]);
         $target_article->comments()->save($new_comment);
+        return redirect()->intended('/articles');
     }
 
     /**

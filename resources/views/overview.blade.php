@@ -6,7 +6,7 @@
         <div class="artview">
             <h3> {{ $article->title }} </h3>
             <div class="arttext">
-                {{ $article->contents }}
+                {!! $article->html_contents !!}
             </div>
             <button type="button" class="btn" data-toggle="modal" data-target="#mymodal-{{$article->id}}"> commentaar </button>
             <div id="mymodal-{{$article->id}}" class="modal fade" role="modal">

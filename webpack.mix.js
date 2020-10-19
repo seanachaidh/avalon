@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
+   .ts('resources/js/mainfile.ts', 'public/js')
    .copy('resources/img/*', 'public/img')
    .webpackConfig({
        module: {
@@ -26,5 +27,6 @@ mix.js('resources/js/app.js', 'public/js')
         },
         resolve: {
             extensions: ['*', '.js', '.jsx', '.vue', '.ts', '.tsx']
-        }
+        },
+        devtool: "source-map"
    })

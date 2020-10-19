@@ -6,7 +6,7 @@
         <div class="artview">
             <h3> {{ $article->title }} </h3>
             <div class="arttext">
-                {!! $article->html_contents !!}
+                {{$article->html_contents}}
             </div>
             <button type="button" class="btn" data-toggle="modal" data-target="#mymodal-{{$article->id}}"> commentaar </button>
             <div id="mymodal-{{$article->id}}" class="modal fade" role="modal">
@@ -18,10 +18,10 @@
                         <div class="modal-body">
                             <form class="form-inline" action="/articles/{{$article->id}}/comments" method="POST">
                                 @csrf
-                                <label>Geef commentaar!</label>
-                                <input type="text" class="form-control" id="author" name="author" placeholder="Jouw naam" />
-                                <input type="text" class="form-control" id="contents" name="contents" placeholder="Jouw commentaar" />
-                                <input type="submit" class="btn btn-default"/>
+                                <div class="inputdiv" id="commentinput" contenteditable="true">Write here your comment</div>
+                                <div class="inputbuttons">
+                                    <button class="btn btn-primary btn-sm">Send comment</button>
+                                </div>
                             </form>
                             @foreach($article->comments()->get() as $comment)
                                 <div class=comment-author">

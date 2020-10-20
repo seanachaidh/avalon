@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
         <label for="synopsis">Beschrijving</label>
-        <input type="text" name="synopsis" id="synopsis" class=form-control" />
+        <input type="text" name="synopsis" id="synopsis" class="form-control" />
     </div>
     <div class="form-group">
         <label for="contents">Inhoud</label>

@@ -20,7 +20,7 @@ class ArticleController extends Controller
      */
     public function index(Request $request)
     {
-        $article = Article::orderBy('created_at')->get();
+        $article = Article::orderBy('created_at', 'desc')->get();
 
         //Van de variabele een referentie maken zodat ik het direct kan bewerken
         foreach ($article as &$a) {

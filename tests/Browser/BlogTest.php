@@ -9,7 +9,6 @@ use Tests\DuskTestCase;
 
 class BlogTest extends DuskTestCase
 {
-    use DatabaseTransactions;
     
     public function testLogin()
     {
@@ -43,7 +42,7 @@ class BlogTest extends DuskTestCase
             $browser->press("Login!");
             */
             $browser->visit("/articles/create");
-            $browser->type("title", "testing post");
+            $browser->type("title", "first testing post");
             $browser->type("synopsis", "A testing post");
             $browser->type("contents", "Dusk test testingmessage");
             $browser->press("Maken!");
@@ -53,7 +52,7 @@ class BlogTest extends DuskTestCase
         });
     }
     
-    public function testComment()
+    public function testCommentmodal()
     {
         $this->browse(function(Browser $browser) {
             $browser->visit("/articles");
@@ -65,4 +64,37 @@ class BlogTest extends DuskTestCase
             $browser->assertAttribute("#mymodal-1", "class", "modal fade");
         });
     }
+    
+    public function testComment()
+    {
+        $this->browse(function(Browser $browser) {
+            $browser->visit("/articles");
+            $browser->press("commentaar");
+            $browser->pause(2000);
+            $browser->type("#commentinput", "ik vind deze post leuk");
+            $browser->press("Send comment");
+            $browser->assertPathIs("/articles");
+            $browser->press("commentaar");
+            $browser->pause(2000);
+            $browser->assertSee("ik vind deze post leuk");
+        });        
+    }
+    
+    public function testOrder()
+    {
+        $this->browse(function(Browser $browser) {
+            //maak een tweede bericht
+            $browser->visit("/articles/create");
+            $browser->type("title", "second testing post");
+            $browser->type("synopsis", "A second testing post");
+            $browser->type("contents", "Dusk test second testingmessage");
+            $browser->press("Maken!");
+            
+            $browser->visit("/articles");
+            $browser->assertSeeIn(".artview:nth-of-type(1) h3", "second testing post");
+            $browser->assertSeeIn(".artview:nth-of-type(2) h3", "first testing post");
+        });
+    }
+    
+    
 }

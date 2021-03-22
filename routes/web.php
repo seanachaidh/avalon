@@ -1,6 +1,7 @@
 <?php
 
 use App\Article;
+use Web\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +27,7 @@ Route::get('/login', 'MyLoginController@showLogin');
 Route::post('/login','MyLoginController@authenticate');
 Route::get('/logout', 'MyLoginController@logout');
 
-Route::resource('articles', 'ArticleController')->only([
-    'create', 'store', 'update', 'delete'
-])->middleware('CheckAdmin');
-
-Route::resource('articles', 'ArticleController')->only([
+Route::resource('articles', ArticleController::class)->only([
     'index', 'show'
 ]);
 

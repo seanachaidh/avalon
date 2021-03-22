@@ -18,6 +18,10 @@ Route::get('/', function () {
     return redirect()->intended('/articles');
 });
 
+Route::get('/aboutme', function() {
+    return view('aboutme');
+});
+
 Route::get('/feed.rss', function() {
     $articles = Article::all();
     return view('rssfeed', ['articles' => $articles]);

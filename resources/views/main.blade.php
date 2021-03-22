@@ -44,7 +44,7 @@
             <a class="nav-link" href="/articles">Articles</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">About me</a>
+            <a class="nav-link" href="/aboutme">About me</a>
         </li>
         </ul>
         <!-- Links -->

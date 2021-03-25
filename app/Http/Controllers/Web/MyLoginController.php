@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -12,8 +13,6 @@ class MyLoginController extends Controller
     {
         Log::info('Authenticate');
         $credentials = $request->only('email', 'password');
-        //echo('hello world');
-        //var_dump($credentials);
 
         if (Auth::attempt($credentials)) {
             Log::info('Logging in succeeded');

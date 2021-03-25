@@ -1,6 +1,6 @@
 <?php
 
-use App\Article;
+use App\Models\Article;
 use Web\ArticleController;
 
 /*
@@ -27,12 +27,12 @@ Route::get('/feed.rss', function() {
     return view('rssfeed', ['articles' => $articles]);
 });
 
-Route::get('/login', 'MyLoginController@showLogin');
-Route::post('/login','MyLoginController@authenticate');
-Route::get('/logout', 'MyLoginController@logout');
+Route::get('/login', 'Web\MyLoginController@showLogin');
+Route::post('/login','Web\MyLoginController@authenticate');
+Route::get('/logout', 'Web\MyLoginController@logout');
 
 Route::resource('articles', ArticleController::class)->only([
-    'index', 'show'
+    'index', 'show', 'create'
 ]);
 
 Route::resource('articles.comments', 'CommentController')->only([

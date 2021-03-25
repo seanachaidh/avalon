@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::resource('articles', 'ArticleController')->only([
-    'create', 'store', 'update', 'delete'
+    'store', 'update', 'delete'
 ])->middleware('CheckAdmin');

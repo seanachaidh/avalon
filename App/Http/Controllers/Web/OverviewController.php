@@ -14,7 +14,12 @@ class OverviewController extends Controller
     public function handleClick(Request $request)
     {
         //show here a specific article
-        
+        $buttonval = $request->input("articleButton", "");
+        if($buttonval == "") {
+            //Go to default
+        } else {
+            
+        }
     }
 
 }

@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class OverviewController extends Controller
 {
@@ -16,8 +17,11 @@ class OverviewController extends Controller
         //show here a specific article
         $buttonval = $request->input("articleButton", "");
         if($buttonval == "") {
-            //Go to default
+            return $this->showOverview($request);
         } else {
+            //Get hidden Id value
+            $artid = $request->input("artid", "");
+            $article = Article::find($artid);
             
         }
     }

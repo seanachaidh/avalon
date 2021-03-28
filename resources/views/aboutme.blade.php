@@ -2,10 +2,10 @@
 
 @section('content')
 
-<h1 class="mainheader">About me</h1>
+<h1 class="main-header">About me</h1>
 
 <p>
-Hallo! Ik ben pieter en ik ben een softwareprogrammeur
+Hallo! Ik ben Pieter en ik ben een softwareprogrammeur
 </p>
 
 @endsection

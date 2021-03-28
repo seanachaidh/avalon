@@ -18,9 +18,9 @@
                         <div class="modal-body">
                             <form class="form-inline" action="/articles/{{$article->id}}/comments" method="POST">
                                 @csrf
-                                <div class="inputdiv" id="commentinput" contenteditable="true">Write here your comment</div>
+                                <input type="text" name="contents" class="commentinput" />
                                 <div class="inputbuttons">
-                                    <button class="btn btn-primary btn-sm">Send comment</button>
+                                    <button name="action" value="send_comment" class="btn btn-primary btn-sm">Send comment</button>
                                 </div>
                             </form>
                             @foreach($article->comments()->get() as $comment)

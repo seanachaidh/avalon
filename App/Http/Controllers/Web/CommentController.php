@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Comment;
 
@@ -37,7 +38,8 @@ class CommentController extends Controller
      */
     public function store($artid, Request $request)
     {
-        $author = $request->input('author');
+        //Geburikers hebben de mogelijkheid om anoniem te blijven
+        $author = $request->input('author', 'Anoniem');
         $contents = $request->input('contents');
 
         $target_article = Article::find($artid);

@@ -2,6 +2,7 @@
 
 @section('content')
 
-@fore
+<p> dit is een test </p>
 
 @endsection
+

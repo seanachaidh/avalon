@@ -15,3 +15,5 @@ yarn-error.log
 avalondb.db
 .DS_Store
 public/*
+/.buildpath
+/.project

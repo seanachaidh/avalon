@@ -55,7 +55,9 @@
     </nav>
 
     <div class="container">
-        @yield('content')
+    	<div class="margincontainer">
+     		@yield('content')
+    	</div>
     </div>
 </body>
 </html>

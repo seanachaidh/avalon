@@ -1,7 +1,14 @@
 <?php
 
-use App\Models\Article;
+namespace routes;
+
 use Web\ArticleController;
+use App\Models\Article;
+use Illuminate\Support\Facades\Route;
+
+use function routes\routefiles\routesAdmin;
+use function routes\routefiles\loginRoutes;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,15 +34,22 @@ Route::get('/feed.rss', function() {
     return view('rssfeed', ['articles' => $articles]);
 });
 
+
 Route::get('/login', 'Web\MyLoginController@showLogin');
 Route::post('/login','Web\MyLoginController@authenticate');
 Route::get('/logout', 'Web\MyLoginController@logout');
+
+
+Route::prefix('admin')->group(function() {
+    Route::get('/overview', 'Web\OverviewController@showOverview')->middleware('CheckAdmin');
+    Route::get('/overview/{article}', 'Web\OverviewController@handleClick')->middleware('CheckAdmin');
+});
 
 Route::resource('articles', ArticleController::class)->only([
     'index', 'show', 'create'
 ]);
 
-Route::resource('articles.comments', 'CommentController')->only([
+Route::resource('articles.comments', 'Web\CommentController')->only([
     'store'
 ]);
 

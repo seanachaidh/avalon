@@ -12,8 +12,12 @@ class OverviewView {
     public function __construct(Array $articles, Article $currentArticle) {
         $this->currentArticle = $currentArticle;
         $this->articles = $articles;
+        if($currentArticle != null) {
+            $this->loadIndex();
+        } else {
+            $index = -1;
+        }
         
-        $this->loadIndex();
     }
     
     private function loadIndex() {

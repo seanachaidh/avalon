@@ -61,6 +61,7 @@
     ]
   },
   "include": [
-    "resources/js/*"
+    "resources/js/*",
+    "resources/js/angular-admin/*.ts"
   ]
 }

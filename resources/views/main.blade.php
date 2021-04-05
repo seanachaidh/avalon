@@ -15,12 +15,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
-    <script src="js/mainfile.js" type="text/javascript"></script>
+    <script src="/js/mainfile.js" type="text/javascript"></script>
+    <script src="/js/mainangular.js" type="text/javascript"></script>
 
-    <link rel="stylesheet" href="css/app.css" type="text/css" />
+    <link rel="stylesheet" href="/css/app.css" type="text/css" />
 
 </head>
-<body style="background-image: url('img/digitalcity_0017.JPG');">
+<body style="background-image: url('/img/digitalcity_0017.JPG');">
     
     <!--Navbar-->
     <nav class="navbar bg-light navbar-light navbar-expand-lg">

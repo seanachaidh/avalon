@@ -1,3 +1,17 @@
+.overview-admin-content {
+  display: flex;
+}
+
+.sidepanel {
+  border-right: 1px solid black;
+  padding-right: 2em;
+}
+
+.mainpanel {
+  flex: 70%;
+  margin-left: 1em;
+}
+
 @media (max-width: 768px) {
   #loginlink {
     display: none;

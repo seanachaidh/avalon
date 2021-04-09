@@ -13,8 +13,8 @@ class OverviewController extends Controller
     public function showOverview(Request $request)
     {
         $articles = Article::orderBy('created_at', 'desc')->get();
-        return view($this->viewName);
-        
+        $view = new OverviewView($articles, null);
+        return view($this->viewName, ['view' => $view]);
     }
 
     public function handleClick(Article $article, Request $request)

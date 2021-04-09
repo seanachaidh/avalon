@@ -4,12 +4,12 @@ namespace App\Models\ModelViews;
 use App\Models\Article;
 
 class OverviewView {
-    public Article $currentArticle;
+    public $currentArticle;
     public $articles;
     public $index; //The index of the currently selected article
     
     
-    public function __construct(Array $articles, Article $currentArticle) {
+    public function __construct($articles, $currentArticle) {
         $this->currentArticle = $currentArticle;
         $this->articles = $articles;
         if($currentArticle != null) {

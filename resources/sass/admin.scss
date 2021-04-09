@@ -1,0 +1,29 @@
+.overview-admin-content {
+    display: flex;
+}
+
+.sidepanel {
+    border-right: 1px solid black;
+    padding-right: 2em;
+}
+
+.mainpanel {
+    flex: 70%;
+    margin-left: 1em;
+}
+
+//menuitem content
+.article-item-menu  {
+    position: relative;
+    display: inline-block;
+}
+
+.article-item-menu-items {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.article-item-menu:hover .article-item-menu-items {
+    display: block;
+}

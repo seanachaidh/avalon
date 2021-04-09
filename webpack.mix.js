@@ -14,7 +14,6 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
    .ts('resources/js/mainfile.ts', 'public/js')
-   .ts('resources/js/angular-admin/mainangular.ts', 'public/js')
    .copy('resources/img/*', 'public/img')
    .copy('resources/templates/admin/*.html', 'public/admin/templates')
    .webpackConfig({

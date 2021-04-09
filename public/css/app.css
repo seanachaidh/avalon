@@ -12,6 +12,21 @@
   margin-left: 1em;
 }
 
+.article-item-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.article-item-menu-items {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.article-item-menu:hover .article-item-menu-items {
+  display: block;
+}
+
 @media (max-width: 768px) {
   #loginlink {
     display: none;

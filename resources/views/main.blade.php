@@ -21,8 +21,7 @@
     <link rel="stylesheet" href="/css/app.css" type="text/css" />
 
 </head>
-<body style="background-image: url('/img/digitalcity_0017.JPG');">
-    
+<body>
     <!--Navbar-->
     <nav class="navbar bg-light navbar-light navbar-expand-lg">
 
@@ -54,9 +53,11 @@
     <!-- Collapsible content -->
 
     </nav>
+    <div id="background-image"></div>
 
     <div class="container">
     	<div class="margincontainer">
+            
      		@yield('content')
     	</div>
     </div>

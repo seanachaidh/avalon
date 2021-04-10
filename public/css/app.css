@@ -21,6 +21,9 @@
   display: none;
   position: absolute;
   z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  list-style-type: none;
+  padding: 5px;
 }
 
 .article-item-menu:hover .article-item-menu-items {
@@ -35,6 +38,19 @@
   .nav-item {
     text-align: center;
   }
+}
+
+#background-image {
+  background-image: url("/img/background.jpg");
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  left: 0;
+  top: 0%;
+  z-index: -1;
+  filter: blur(5px);
 }
 
 .navbar-laravel {

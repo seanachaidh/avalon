@@ -45,8 +45,12 @@ Route::prefix('admin')->group(function() {
     Route::get('/overview/{article}', 'Web\OverviewController@handleClick')->middleware('CheckAdmin');
 });
 
+Route::resource('articles', ArticleController::class)->except([
+    'index', 'show'
+])->middleware('CheckAdmin');
+
 Route::resource('articles', ArticleController::class)->only([
-    'index', 'show', 'create'
+    'index', 'show'
 ]);
 
 Route::resource('articles.comments', 'Web\CommentController')->only([

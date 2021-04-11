@@ -12,6 +12,10 @@
   margin-left: 1em;
 }
 
+.article-item {
+  display: flex;
+}
+
 .article-item-menu {
   position: relative;
   display: inline-block;
@@ -24,6 +28,11 @@
   background-color: rgba(255, 255, 255, 0.7);
   list-style-type: none;
   padding: 5px;
+}
+
+.article-item-menu-icon {
+  padding-left: 10px;
+  flex: 10%;
 }
 
 .article-item-menu:hover .article-item-menu-items {

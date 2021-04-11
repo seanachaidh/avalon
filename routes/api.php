@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Web\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('articles', 'ArticleController')->only([
-    'store', 'update', 'delete'
+Route::resource('articles', ArticleController::class)->only([
+    'store', 'update', 'destroy'
 ])->middleware('CheckAdmin');

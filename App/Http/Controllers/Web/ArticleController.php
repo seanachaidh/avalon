@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class ArticleController extends Controller
 {
@@ -91,6 +92,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article, Request $request)
     {
+        Log::info("invoked show");
         if($request->wantsJson()) {
             return response()->json($article);
         } else {

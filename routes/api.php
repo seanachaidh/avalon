@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Web\ArticleController;
+use Rest\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,10 @@ use Web\ArticleController;
 |
 */
 
-Route::resource('articles', ArticleController::class)->only([
-    'store', 'update', 'destroy'
+Route::resource('articles', ArticleRestController::class)->except([
+    'create', 'edit', 'index', 'show'
 ])->middleware('CheckAdmin');
+
+Route::resource('articles', ArticleRestController::class)->only([
+    'index', 'show'
+]);

@@ -50,10 +50,10 @@ Route::resource('articles', ArticleController::class)->except([
 ])->middleware('CheckAdmin');
 
 Route::resource('articles', ArticleController::class)->only([
-    'index', 'show'
+    'create', 'index', 'show', 'edit'
 ]);
 
-Route::resource('articles.comments', 'Web\CommentController')->only([
-    'store'
-]);
+//Route::resource('articles.comments', 'Web\CommentController')->only([
+//    'store'
+//]);
 

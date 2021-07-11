@@ -34,7 +34,9 @@
         "@types/showdown": "^1.9.3",
         "bootstrap": "^4.4.1",
         "core-js": "^3.10.0",
+        "fs": "^0.0.1-security",
         "jquery": "^3.5",
+        "polyfill": "^0.1.0",
         "rxjs": "^6.5.5",
         "showdown": "1.9.1",
         "zone.js": "^0.10.3"

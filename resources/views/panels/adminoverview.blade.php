@@ -10,6 +10,7 @@
     </div>
     <div class="mainpanel">
     dit is de mainpanel
+    <app-root></app-root>
     </div>    
 </div>
 @endsection

@@ -1,7 +1,6 @@
 <?php
 namespace App\Models\ModelViews;
 
-use App\Models\Article;
 
 class OverviewView {
     public $currentArticle;
@@ -15,7 +14,7 @@ class OverviewView {
         if($currentArticle != null) {
             $this->loadIndex();
         } else {
-            $index = -1;
+            $this->index = -1;
         }
         
     }

@@ -11,7 +11,7 @@
     <div class="editor-editor">
         <textarea class="form-control"></textarea>
     </div>
-
+    <!-- TODO: zoek hier een betere plek voor -->
     <div class="editor-synopis">
 
     </div>

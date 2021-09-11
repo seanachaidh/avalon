@@ -8,11 +8,14 @@
             <x-article-item :index="$loop->index" :article="$a"/>
         @endforeach
         <div>
-            nieuw
+            <button>nieuw</button>
         </div>
     </div>
     <div class="mainpanel">
-
+        <!-- hier moet ik nog parameters aan geven -->
+        <x-article-editor>
+            
+        </x-article-editor>
     </div>    
 </div>
 @endsection

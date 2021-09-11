@@ -1,5 +1,4 @@
 import { MarkdownEngine } from './markdownengine';
-import './angular-admin/mainangular';
 
 function loadArticles(ev: Event) {
     //load all elements

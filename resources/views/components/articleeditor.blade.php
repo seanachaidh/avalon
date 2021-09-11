@@ -9,19 +9,26 @@
     </div>
 
     <div class="editor-editor">
-
+        <textarea class="form-control"></textarea>
     </div>
 
     <div class="editor-synopis">
 
     </div>
     <div class="editor-actionbar">
-        <button>
-            Bewaren
-        </button>
-        <button>
-            <!-- dit gaat denk ik in javascript gemaakt worden -->
-            Alles wissen
-        </button>
+        <div class="row">
+            <div class="col-md">
+                <button class="form-control btn btn-primary">
+                    Bewaren
+                </button>                
+            </div>
+
+            <div class="col-md">
+                <button class="form-control btn btn-danger">
+                    Alles wissen
+                </button>                
+            </div>
+        </div>
+
     </div>
 </div>

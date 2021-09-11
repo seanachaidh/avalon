@@ -51,6 +51,10 @@
   display: inline;
 }
 
+.editor-actionbar {
+  margin-top: 5px;
+}
+
 @media (max-width: 768px) {
   #loginlink {
     display: none;

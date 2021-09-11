@@ -7,10 +7,12 @@
         @foreach($view->articles as $a)
             <x-article-item :index="$loop->index" :article="$a"/>
         @endforeach
+        <div>
+            nieuw
+        </div>
     </div>
     <div class="mainpanel">
-    dit is de mainpanel
-    <app-root></app-root>
+
     </div>    
 </div>
 @endsection

@@ -10,7 +10,7 @@ class ArticleEditor extends Component {
         $this->article = $article;
     }
 
-    public funcion render() {
+    public function render() {
         return view('components.articleeditor');
     }
 

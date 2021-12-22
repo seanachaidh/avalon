@@ -1,11 +1,11 @@
 
 <div class="editor-container">
     <div class="editor-buttonbar">
-        <ul class="editor-menu">
-            <li> hoofding </li>
-            <li> schuin </li>
-            <li> afbeelding </li>
-        </ul>
+        <div class="editor-menu">
+            <button class="btn"><span class="fas fa-heading"></span></button>
+            <button class="btn"><span class="fas fa-italic"></span></button>
+            <button class="btn"><span class="fas fa-images"></span></button>
+        </div>
     </div>
 
     <div class="editor-editor">

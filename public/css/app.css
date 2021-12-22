@@ -49,8 +49,8 @@
   display: block;
 }
 
-.editor-buttonbar ul {
-  display: inline;
+.editor-buttonbar {
+  margin-bottom: 1em;
 }
 
 .editor-actionbar {

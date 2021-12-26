@@ -17,6 +17,11 @@ function commentclick(this: Element, ev: MouseEvent) {
     console.log('Er werd op de commentaar geklikt');
 }
 
+
+export function insertheading(elem: string) {
+    console.log('hello world');
+}
+
 window.addEventListener('load', (ev: Event) =>  {
     console.log("document loaded");
     var commentElement = document.getElementById('commentinput');

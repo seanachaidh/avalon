@@ -1,4 +1,5 @@
 <form method="POST">
+    @csrf
     <div class="editor-container">
         <div class="editor-buttonbar">
             <div class="editor-menu">

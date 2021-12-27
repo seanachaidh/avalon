@@ -16,6 +16,7 @@ class ArticleRestConroller extends Controller {
         $article = Article::orderBy('created_at', 'desc')->get();
 
         //Van de variabele een referentie maken zodat ik het direct kan bewerken
+        //TODO hier json vertaling zetten. Misschien via optie in het get request?
         foreach ($article as &$a) {
             $new_contents = $this->resolve($a);
             $a->html_contents = $new_contents;

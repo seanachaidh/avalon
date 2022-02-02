@@ -27,6 +27,12 @@
                 </div>
 
                 <div class="col-md">
+                    <button type="button" class="form-control btn btn-secondary">
+                        Voorbeeld
+                    </button>
+                </div>
+
+                <div class="col-md">
                     <button type="button" class="form-control btn btn-danger">
                         Alles wissen
                     </button>         
@@ -38,15 +44,35 @@
 
 <script type="text/javascript">
     let editor = document.getElementById('editor');
+
+    function addTextAtCurrentPosition() {
+        //ervan uitgaande dat selectionend en selectionstart op dezeflde positie zijn.
+        let buffer = editor.innerHTML;
+        let currentPos = editor.selectionEnd;
+        
+        
+
+    }
+
     function insertheading(val) {
-        editor.innerHTML += "hello world";
+        editor.innerHTML += "</br> ## ";
+        setEditorCursor(pos);
     }
     function insertitalic() {
+        let pos = editor.selectionEnd - 1;
+        editor.innerHTML += "__";
+        setEditorCursor(pos)
+    }
 
+    function insertBold() {
+        let pos = editor.selectionEnd - 1;
+        editor.innerHTML += "**";
+        setEditorCursor(pos);
     }
 
     function setEditorCursor(position)  {
         editor.selectionEnd = position;
+        editor.focus();
     }
 
     function eraseAll() {

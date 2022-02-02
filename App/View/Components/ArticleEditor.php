@@ -15,9 +15,4 @@ class ArticleEditor extends Component {
     public function render() {
         return view('components.articleeditor');
     }
-
-    public function bewaarArtikel() {
-        
-    }
-
 }

@@ -14,6 +14,7 @@
 		"laravel/framework": "8.5.*",
 		"laravel/tinker": "2.6.1",
 		"laravelcollective/annotations": "8.0.1",
+		"michelf/php-markdown": "^1.9",
 		"zircote/swagger-php": "^3.1"
 	},
 	"require-dev" : {
